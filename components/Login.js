@@ -5,19 +5,17 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
-
-import Button from 'react-native-button'
-
+import {Actions} from 'react-native-router-flux'
 class Login extends Component {
     render(){
-        let Actions = this.props.routes;
-
         return (
             <View style={styles.container}>
-                <Text>Login page: {this.props.data}</Text>
-                <Button onPress={Actions.pop}>Back</Button>
+               <TouchableHighlight onPress={()=>{Actions.home()}}>
+                <Text>Login page</Text>
+               </TouchableHighlight>
             </View>
         );
     }

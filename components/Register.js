@@ -7,16 +7,12 @@ import {
   Text,
   View
 } from 'react-native';
-import Button from 'react-native-button'
 
 class Register extends Component {
     render(){
-        let Actions = this.props.routes;
         return (
             <View style={styles.container}>
-                <Text>Register page</Text>
-                <Button onPress={Actions.home}>Home</Button>
-                <Button onPress={Actions.pop}>Back</Button>
+                <Text>Login page</Text>
             </View>
         );
     }
@@ -40,5 +36,7 @@ var styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
+
 
 module.exports = Register;
