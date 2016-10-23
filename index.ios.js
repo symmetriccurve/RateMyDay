@@ -7,24 +7,18 @@ import {
   Text,
   View
 } from 'react-native';
-import {Scene, Router} from 'react-native-router-flux';
 
-var Login = require('./components/Login')
-var Register = require('./components/Register')
+var Smile = require('./components/Smile')
+var Fit = require('./components/Fit')
+var Happy = require('./components/Happy')
+var Help = require('./components/Help')
+var Creative = require('./components/Creative')
+
 var Home = require('./components/Home')
+
 class RateMyDay extends Component {
     render(){
-        return (
-            <View style={{flex:1}}>
-            <Router>
-            <Scene key="root">
-              <Scene key="login" component={Login} title="Login"/>
-              <Scene key="register" component={Register} title="Register"/>
-              <Scene key="home" component={Home}/>
-            </Scene>
-          </Router>
-            </View>
-        );
+        return <Home/>
     }
 }
 

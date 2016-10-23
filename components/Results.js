@@ -8,13 +8,15 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
-import {Actions} from 'react-native-router-flux'
-class Login extends Component {
+
+import {Actions} from 'react-native-router-flux';
+
+class Results extends Component {
     render(){
         return (
             <View style={styles.container}>
-               <TouchableHighlight onPress={()=>{Actions.home()}}>
-                <Text>Login page</Text>
+               <TouchableHighlight onPress={()=>{}}>
+                  <Text>Results</Text>
                </TouchableHighlight>
             </View>
         );
@@ -42,4 +44,4 @@ var styles = StyleSheet.create({
 
 
 
-module.exports = Login;
+module.exports = Results;
