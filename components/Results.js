@@ -16,7 +16,7 @@ class Results extends Component {
         return (
             <View style={styles.container}>
                <TouchableHighlight onPress={()=>{}}>
-                  <Text>Results</Text>
+                  <Text>{this.props.overAllRating}</Text>
                </TouchableHighlight>
             </View>
         );

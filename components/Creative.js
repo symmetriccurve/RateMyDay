@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 import React, { Component } from 'react';
 import {
@@ -6,7 +6,8 @@ import {
   View,
   TextInput,
   Dimensions,
-  TouchableHighlight
+  TouchableHighlight,
+  Alert
 } from 'react-native';
 var {height,width} = Dimensions.get('window')
 import {Actions} from 'react-native-router-flux';
@@ -15,9 +16,18 @@ class Creative extends Component {
    constructor(props){
       super(props)
       this.state ={
-         rating:'0'
+         creativeRating:''
       }
    }
+
+   _ratingLogin(){
+      if(/^(?:[1-9]|0[0]|10)$/.test(this.state.creativeRating)){
+            Actions.Happy({overAllRating: Number(this.state.creativeRating)})
+      }else {
+         Alert.alert('Please Enter on a scale of 1 to 10')
+      }
+   }
+
     render(){
         return (
             <View style={{height:height,marginTop:height/20}}>
@@ -28,14 +38,14 @@ class Creative extends Component {
                </View>
                <View style={{flex:0.2,backgroundColor:'#87CFEE',alignItems:'center',justifyContent:'center',flexDirection:'row',shadowOffset:{width:1,height:1},shadowColor:'black',shadowRadius:3, shadowOpacity: 0.8}}>
                   <TextInput
-                  value={this.state.rating}
-                  onChangeText = {(text)=>this.setState({rating:text})}
+                  value={this.state.creativeRating}
+                  onChangeText = {(text)=>this.setState({creativeRating:text})}
                   keyboardType='numeric'
                   maxLength = {2}
                   textAlign='center'
                   style={{height:height/11,width:width/1.5,backgroundColor:'#87CFEE',fontFamily:'AvenirNext-Bold',fontSize:height/30,color:'white'}}/>
                   <TouchableHighlight
-                  onPress ={()=>{Actions.Happy(this.state.rating)}}
+                  onPress ={()=>{this._ratingLogin()}}
                   underlayColor = '#eeeeee'
                   style={{height:height/11,width:width/4,backgroundColor:'#0576A7',alignItems:'center',justifyContent:'center'}}>
                      <View><Text style={{fontSize:height/30,fontFamily:'AvenirNext-Bold',fontWeight:'700',color:'white'}}> Next </Text></View>

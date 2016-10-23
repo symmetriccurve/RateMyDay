@@ -5,7 +5,6 @@ import {
   Text,
   View,
   Dimensions,
-  TextInput,
   TouchableHighlight
 } from 'react-native';
 var {height,width} = Dimensions.get('window')
