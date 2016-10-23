@@ -6,6 +6,7 @@ import {
   View,
   TextInput,
   Dimensions,
+  Alert,
   TouchableHighlight
 } from 'react-native';
 var {height,width} = Dimensions.get('window')
@@ -38,6 +39,7 @@ class Smile extends Component {
                </View>
                <View style={{flex:0.2,backgroundColor:'#FFE064',alignItems:'center',justifyContent:'center',flexDirection:'row',shadowOffset:{width:1,height:1},shadowColor:'black',shadowRadius:3, shadowOpacity: 0.8}}>
                   <TextInput
+                  autoFocus ={true}
                   value={this.state.smileRating}
                   onChangeText = {(text)=>this.setState({smileRating:text})}
                   keyboardType='numeric'

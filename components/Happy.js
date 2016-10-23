@@ -40,6 +40,7 @@ class Happy extends Component {
                </View>
                <View style={{flex:0.2,backgroundColor:'#A4F3B2',alignItems:'center',justifyContent:'center',flexDirection:'row',shadowOffset:{width:1,height:1},shadowColor:'black',shadowRadius:3, shadowOpacity: 0.8}}>
                   <TextInput
+                  autoFocus ={true}
                   value={this.state.happyRating}
                   onChangeText = {(text)=>this.setState({happyRating:text})}
                   keyboardType='numeric'

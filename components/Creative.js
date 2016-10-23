@@ -25,6 +25,7 @@ class Creative extends Component {
             Actions.Happy({overAllRating: Number(this.state.creativeRating)})
       }else {
          Alert.alert('Please Enter on a scale of 1 to 10')
+         this.setState({creativeRating:''})
       }
    }
 
@@ -38,6 +39,7 @@ class Creative extends Component {
                </View>
                <View style={{flex:0.2,backgroundColor:'#87CFEE',alignItems:'center',justifyContent:'center',flexDirection:'row',shadowOffset:{width:1,height:1},shadowColor:'black',shadowRadius:3, shadowOpacity: 0.8}}>
                   <TextInput
+                  autoFocus ={true}
                   value={this.state.creativeRating}
                   onChangeText = {(text)=>this.setState({creativeRating:text})}
                   keyboardType='numeric'

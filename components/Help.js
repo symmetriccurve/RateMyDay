@@ -26,7 +26,7 @@ class Help extends Component {
             Actions.Smile({overAllRating: Number(this.props.overAllRating )+ Number(this.state.helpRating)})
       }else {
          Alert.alert('Please Enter on a scale of 1 to 10')
-         this.setState({happyRating:''})
+         this.setState({helpRating:''})
       }
    }
 
@@ -40,6 +40,7 @@ class Help extends Component {
                </View>
                <View style={{flex:0.2,backgroundColor:'#A5A4F0',alignItems:'center',justifyContent:'center',flexDirection:'row',shadowOffset:{width:1,height:1},shadowColor:'black',shadowRadius:3, shadowOpacity: 0.8}}>
                   <TextInput
+                  autoFocus ={true}
                   value={this.state.helpRating}
                   onChangeText = {(text)=>this.setState({helpRating:text})}
                   keyboardType='numeric'
